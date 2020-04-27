@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title> The Gossip Project</title>
+  </head>
+  <body style="text-align: center;">
+    <h1 style=" background-color: #F5F5DC; color: red;">Modifier le potin!</h1>
+    <p style="color: DodgerBlue;">Tu peux changer le potin via le formulaire ci-dessous</p>
+    <form action='/gossips/edit/' method="POST">
+      <% id_gossips.each do|gossip| %>
+        Saisi ici ton nouveau nom : <input type="text" name="gossip_author" value="<%= gossip.author %>" /><br/>
+        Modifie ton potin : <input type="text" name="gossip_content" value="<%= gossip.content %>" /><br/>
+      <% end %>
+      <input type="submit"/>
+    </form>
+  </body>
+</html>
